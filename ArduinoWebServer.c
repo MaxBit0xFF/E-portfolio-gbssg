@@ -1,36 +1,21 @@
 /*
-  Web Server
+Simpler Websever auf dem Arduino in kombination mitdem Ethernet Shield.
+Der webserver Bringt eine HTML Standart-site auf der die Read-werte der pins: A0-A5, angezeigt werden 
 
- A simple web server that shows the value of the analog input pins.
- using an Arduino Wiznet Ethernet shield.
-
- Circuit:
- * Ethernet shield attached to pins 10, 11, 12, 13
- * Analog inputs attached to pins A0 through A5 (optional)
-
- created 18 Dec 2009
- by David A. Mellis
- modified 9 Apr 2012
- by Tom Igoe
- modified 02 Sept 2015
- by Arturo Guadalupi
- 
- */
-
+Dokumentation basierend auf dem beispiel code von der arduino Docs seite; https://docs.arduino.cc/tutorials/ethernet-shield-rev2/web-server.
+*/
+//Doc Version:1.1
 #include <SPI.h>
 #include <Ethernet.h>
 
 // Enter a MAC address and IP address for your controller below.
-// The IP address will be dependent on your local network:
+// Die IP Adresse die der Arduino erhalten sollte; sie sollte dem subnet des Netzwerks entsprechen! Der Arduino Fragt nicht nach DHCP!
 byte mac[] = {
-  0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED
+  0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED// Beispiel!
 };
-IPAddress ip(192, 168, 1, 177);
+IPAddress ip(192, 168, 1, 177);// Beispiel!
 
-// Initialize the Ethernet server library
-// with the IP address and port you want to use
-// (port 80 is default for HTTP):
-EthernetServer server(80);
+EthernetServer server(80); // Initialisierung des Ethernet servers mit der <Ethernet.h> Bibliothek; Port 80 Ist standart für HTTP
 
 void setup() {
   // You can use Ethernet.init(pin) to configure the CS pin
