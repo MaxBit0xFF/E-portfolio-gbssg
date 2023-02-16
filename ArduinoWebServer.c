@@ -4,7 +4,7 @@ Der webserver Bringt eine HTML Standart-site auf der die Read-werte der pins: A0
 
 Dokumentation basierend auf dem beispiel code von der arduino Docs seite; https://docs.arduino.cc/tutorials/ethernet-shield-rev2/web-server.
 */
-//Doc Version:1.1
+//Doc Version:1.2
 #include <SPI.h>
 #include <Ethernet.h>
 
@@ -26,8 +26,7 @@ void setup() {
   //Ethernet.init(15);  // ESP8266 with Adafruit Featherwing Ethernet
   //Ethernet.init(33);  // ESP32 with Adafruit Featherwing Ethernet
 
-  // Open serial communications and wait for port to open:
-  Serial.begin(9600);
+  Serial.begin(9600); // Öffne den Seriellen kommunikations port 
   while (!Serial) {
     ; // wait for serial port to connect. Needed for native USB port only
   }
@@ -101,7 +100,7 @@ void loop() {
     // give the web browser time to receive the data
     delay(1);
     // close the connection:
-    client.stop();
+    client.stop(); //stoppt den Client
     Serial.println("client disconnected");
   }
 }
