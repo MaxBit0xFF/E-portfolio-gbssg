@@ -18,7 +18,7 @@ IPAddress ip(192, 168, 1, 177);// Beispiel!
 EthernetServer server(80); // Initialisierung des Ethernet servers mit der <Ethernet.h> Bibliothek; Port 80 Ist standart für HTTP
 
 void setup() {
-  // You can use Ethernet.init(pin) to configure the CS pin
+  // Konfiguriere den ChipSelect pin für die verschiedenen Ethernet Module; Ethernet.init();
   //Ethernet.init(10);  // Most Arduino shields
   //Ethernet.init(5);   // MKR ETH shield
   //Ethernet.init(0);   // Teensy 2.0
