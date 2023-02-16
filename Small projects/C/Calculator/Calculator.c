@@ -2,37 +2,37 @@
 
 int main() {
     char operator;
-    double firstOperand, secondOperand, result;
+    double num1, num2, result;
 
-    printf("Enter an operator (+, -, *, /): ");
+    printf("Gebe einen Operator an (+, -, *, /): ");
     scanf("%c", &operator);
 
-    printf("Enter two operands: ");
-    scanf("%lf %lf", &firstOperand, &secondOperand);
+    printf("Gebe zwei werte ein (Nummer1 Nummer2): ");
+    scanf("%lf %lf", &num1, &num2);
 
     switch (operator) {
         case '+':
-            result = firstOperand + secondOperand;
+            result = num1 + num2;
             break;
         case '-':
-            result = firstOperand - secondOperand;
+            result = num1 - num2;
             break;
         case '*':
-            result = firstOperand * secondOperand;
+            result = num1 * num2;
             break;
         case '/':
-            if (secondOperand == 0) {
+            if (num2 == 0) {
                 printf("Error: Cannot divide by zero\n");
                 return 1;
             }
-            result = firstOperand / secondOperand;
+            result = num1 / num2;
             break;
         default:
             printf("Error: Invalid operator\n");
             return 1;
     }
 
-    printf("%.2lf %c %.2lf = %.2lf\n", firstOperand, operator, secondOperand, result);
+    printf("%.2lf %c %.2lf = %.2lf\n", num1, operator, num2, result);
 
     return 0;
 }
